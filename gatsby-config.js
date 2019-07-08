@@ -1,17 +1,27 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
+const config = require('./site-config');
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: config.siteTitle,
+    siteLang: config.siteLang,
+    metaTags: config.metaTags,
+    linkTags: config.linkTags,
+    facebook: config.facebook,
+    twitter: config.twitter
+  },
   plugins: [
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/data/`,
+      },
+    },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // Add any options here
-        "ssr": false,
+        ssr: false,
       },
     },
     {
