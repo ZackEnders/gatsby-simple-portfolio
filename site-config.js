@@ -1,6 +1,7 @@
 module.exports = {
     siteTitle: "Site title",
     siteLang: "en-US",
+    siteUrl: "https://www.yourdomain.com",
     metaTags: [
         {
             name: "description",
